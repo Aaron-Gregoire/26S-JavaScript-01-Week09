@@ -40,6 +40,7 @@ output.textContent = person.bio();
 // rather than instatiating it from a class (which we will cover later). Objects can be easier to work with than arrays, as you can name each element
 
 /* STEP 5a: Dot syntax allows you to access the parts of an object - the first part is the namespace, and subsequent parts are used to access things encapsulated within the object. Access the first name, last name, and age of the person object, and put it inside the <p id="output"></p>. */
+output.textContent = `${person.name.firstName} ${person.name.lastName}, age ${person.age}`;
 
 /* STEP 5b: Update the above greeting() function inside the person object to return the string, instead of the alert(). */
 
@@ -48,6 +49,9 @@ output.textContent = person.bio();
 /* STEP 6b: Note how this breaks the greeting function - update the greeting function to use this sub-namespace */
 
 /* STEP 7: You can also use bracket notation, just like an array - objects that are built this way are often referred to as associative arrays */
+console.log(person["name"]["firstName"]);
+console.log(person["age"]);
+console.log(person["interests"][0]);
 
 /* STEP 8a: You can also set members of an object - try changing the person's name, and age */
 // person["age"]
@@ -56,6 +60,12 @@ output.textContent = person.bio();
 /* STEP 8b: Bracket notation allows you to dynamically refer to property names. 
 Create a function below that accepts a property name as an argument, then console.log() 
 that property value. Try it out! */
+function getProperty(obj, propName){
+    console.log(obj[propName]);
+}
+getProperty(person, "age");
+getProperty(person, "gender");
+
 person.age = 80;
 
 /* STEP 9a: It it also possible to add new members to an object. Type person.eyes = "YOUR_EYE_COLOUR_HERE" into the console - and then type person.eyes */

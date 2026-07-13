@@ -30,8 +30,28 @@ output.textContent = car2.description();
 
 /* STEP 3a: Build the complete constructor for the object Person (comment out the above function first).
  Include name (first and last), age, gender, interests, bio (function), and greeting (function). */
+function Person(firstName, lastName, age, gender, interests){
+    this.name = {
+        firstName: firstName,
+        lastName: lastName
+    };
+    this.age = age;
+    this.gender = gender;
+    this.interests = interests;
+
+    this.greeting = function(){
+        return `Hey, this is ${this.name.firstName} ${this.name.lastName}!`;
+    };
+
+    this.bio = function(){
+        return `The interests of ${this.name.firstName}, of age: ${this.age}, 
+        of gender: ${this.gender}, are ${this.interests.join(" - ")}.`;
+    };
+}
 
 /* STEP 3b: Instantiate a new Person based on the above constructor */
+let person1 = new Person("Priyansh", "Thakar", 16, "Male", ["swimming", "writing", "coding"]);
+let person2 = new Person("Alex", "Rivera", 22, "Non-binary", ["reading", "chess", "hiking"]);
 
 /* STEP 3c: Attempt to access the various properties of person1 using the console. */
 // person2['age']
@@ -45,8 +65,13 @@ let car3 = new Object();
 car3.make = "RAM";
 car3.model = "1500";
 car3.color ="Green";
+car3.fun = function(){
+    return `The ${car3.make} ${car3.model} is a ${car3.color} beast!`;
+};
 
 /* STEP 4c: Change some of the properties of 'car' in the console, then invoke the car.fun() function */
+// car3.color = "Blue";
+// car3.fun();
 
 /* STEP 5a: Yet another approach is to use the create() method. 
 Let's see how the above car object can be used to create another object */
@@ -54,5 +79,6 @@ let car4 = Object.create(car2);
 car4.color = "Purple";
 
 /* STEP 5b: Output to the paragraph anotherCar.brand - you will see that it has retained the properties of the original object. */
+output.textContent = `${car4.make} ${car4.model} (${car4.color})`;
 
 // This page inspired by and adapted from https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Object-oriented_JS
