@@ -81,11 +81,28 @@ class Latte extends Coffee{
     }
 }
 /* STEP 6: Create a new instance of the Latte object */
-let aaronLatte = new Latte("large", false, "2%")
+let aaronLatte = new Latte("large", false, "2%");
 /* STEP 7: Call up the latteDesc() method for the above created Latte instance */
 
 /* STEP 8: Create yet another instance of Latte using the console, and try the latteDesc() method from the subclass, as well as the serveIt() method from the parent class */
 
+//LAB 2
+class Mocha extends Latte{
+    chocolateType;
+
+    constructor(size, isDecaf, milkType, chocolateType){
+        super(size, isDecaf, milkType);
+        this.chocolateType = chocolateType;
+    }
+    mochaDesc(){
+        return `A ${this.size} sized Mocha with ${this.milkType} milk and this ${this.chocolateType} chocolate.`;
+    }
+}
+
+let aaronMocha = new Mocha("large", false, "2%", "Dark");
+let robertMocha = new Mocha("small", true, "oat", "milk");
+aaronMocha.serveIt();
+robertMocha.serveIt();
 // This page inspired by and adapted from https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Classes_in_JavaScript
 
 // Special thanks to https://openclipart.org/detail/293550/coffee-to-go for the very cool coffee cup SVG
