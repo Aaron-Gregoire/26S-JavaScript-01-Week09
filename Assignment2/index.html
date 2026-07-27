@@ -15,8 +15,88 @@
     </header>
 <main>
     <form id="order-form" novalidate>
+        <fieldset>
+            <legend>Your Details</legend>
+            
+            <div class="form-row">
+                <label for="cutomer-name">Full Name</label>
+                <input type="text" id="cutomer-name" name="cutomer-name" placeholder="Tony stark" required minlength="2">
+                <span class="error-message" id="customer-name-error"></span>
+            </div>
+        </fieldset>
         
+        <fieldset>
+            <legend>Build Your Pizza</legend>
+ 
+            <div class="form-row">
+                <label for="pizza-size">Size</label>
+                <select id="pizza-size" name="pizzaSize" required>
+                <option value="" disabled selected>Select a size</option>
+                <option value="Small">Small (10)</option>
+                <option value="Medium">Medium (12)</option>
+                <option value="Large">Large (14)</option>
+                <option value="X-Large">X-Large (16)</option>
+                </select>
+                <span class="error-message" id="pizza-size-error"></span>
+            </div>
+ 
+            <div class="form-row">
+                <span class="group-label">Crust Type</span>
+                <div class="radio-group" id="crust-group">
+                <label><input type="radio" name="crustType" value="Thin" required> Thin</label>
+                <label><input type="radio" name="crustType" value="Regular"> Regular</label>
+                <label><input type="radio" name="crustType" value="Deep Dish"> Deep Dish</label>
+                <label><input type="radio" name="crustType" value="Stuffed"> Stuffed</label>
+                </div>
+                <span class="error-message" id="crust-error"></span>
+            </div>
+ 
+            <div class="form-row">
+                <span class="group-label">Toppings (choose as many as you like)</span>
+                <div class="checkbox-group" id="toppings-group">
+                <label><input type="checkbox" name="toppings" value="Pepperoni"> Pepperoni</label>
+                <label><input type="checkbox" name="toppings" value="Mushrooms"> Mushrooms</label>
+                <label><input type="checkbox" name="toppings" value="Onions"> Onions</label>
+                <label><input type="checkbox" name="toppings" value="Bacon"> Bacon</label>
+                <label><input type="checkbox" name="toppings" value="Extra Cheese"> Extra Cheese</label>
+                <label><input type="checkbox" name="toppings" value="Green Peppers"> Green Peppers</label>
+                <label><input type="checkbox" name="toppings" value="Pineapple"> Pineapple</label>
+                <label><input type="checkbox" name="toppings" value="Olives"> Olives</label>
+                </div>
+            </div>
+ 
+            <div class="form-row">
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" name="quantity" min="1" max="10" value="1" required>
+                <span class="error-message" id="quantity-error"></span>
+            </div>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Delivery</legend>
+ 
+            <div class="form-row">
+                <span class="group-label">Method</span>
+                <div class="radio-group">
+                <label><input type="radio" name="deliveryMethod" value="Delivery" required checked> Delivery</label>
+                <label><input type="radio" name="deliveryMethod" value="Pickup"> Pickup</label>
+                </div>
+            </div>
+ 
+            <div class="form-row">
+                <label for="instructions">Special Instructions</label>
+                <textarea id="instructions" name="instructions" rows="3" placeholder="e.g. Extra crispy, leave at door..."></textarea>
+            </div>
+        </fieldset>
+ 
+        <button type="submit" id="order-btn">Order Now</button>
     </form>
+     
+    <section id="order-result" class="order-result" hidden>
+        <h2>Order Confirmed</h2>
+        <p id="order-description"></p>
+    </section>
+
 </main>
 </body>
 </html>
