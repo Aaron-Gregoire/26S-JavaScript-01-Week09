@@ -1,0 +1,97 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fdf6ec;
+  color: #333;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+ 
+.site-header {
+  text-align: center;
+}
+ 
+.site-header h1 {
+  color: #c1440e;
+  margin-bottom: 0.2rem;
+}
+ 
+.tagline,
+#student-info {
+  color: #777;
+}
+ 
+.form-row {
+  margin-bottom: 0.8rem;
+}
+ 
+fieldset {
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+ 
+legend {
+  font-weight: bold;
+  color: #c1440e;
+}
+ 
+label,
+.group-label {
+  display: block;
+  font-weight: bold;
+  margin-top: 0.8rem;
+}
+ 
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.2rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+ 
+.invalid {
+  border-color: #cc3333;
+}
+ 
+.radio-group label,
+.checkbox-group label {
+  display: inline-block;
+  font-weight: normal;
+  margin-right: 1rem;
+}
+ 
+.error-message {
+  display: block;
+  color: #cc3333;
+  font-size: 0.85rem;
+}
+ 
+button {
+  margin-top: 1rem;
+  background-color: #c1440e;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+ 
+button:hover {
+  background-color: #a3390b;
+}
+ 
+.order-result {
+  margin-top: 1.5rem;
+  background: #e9f7ef;
+  border: 1px solid #b7e3c8;
+  border-radius: 6px;
+  padding: 1rem;
+}
+ 
