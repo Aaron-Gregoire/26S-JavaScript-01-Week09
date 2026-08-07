@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Albion Market Price Checker</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Albion market price checker</h1>
+        <p>live buy/sell prices from the albion online data project API</p>
+        <p id="student-tag"></p>
+    </header>
+<main>
+         <section class="form-row">
+      <div class="field">
+        <label for="item-select">Item</label>
+        <select id="item-select">
+          <option value="T4_BAG">Adept's Bag (T4)</option>
+          <option value="T5_BAG" selected>Expert's Bag (T5)</option>
+          <option value="T6_BAG">Master's Bag (T6)</option>
+          <option value="T4_MAIN_SWORD">Broadsword (T4)</option>
+          <option value="T5_MAIN_SWORD">Broadsword (T5)</option>
+          <option value="T4_HEAD_PLATE_SET1">Soldier Helmet (T4)</option>
+          <option value="T5_ARMOR_PLATE_SET1">Knight Armor (T5)</option>
+          <option value="T4_2H_BOW">Warbow (T4)</option>
+          <option value="T4_OFF_SHIELD">Guardian Shield (T4)</option>
+          <option value="T5_MOUNT_HORSE">Riding Horse (T5)</option>
+          <option value="T4_ALCHEMY_POTIONHEAL">Minor Healing Potion (T4)</option>
+          <option value="custom">Custom item ID...</option>
+        </select>
+      </div>
+ 
+      <div class="field" id="custom-field" hidden>
+        <label for="item-custom">Custom item ID</label>
+        <input type="text" id="item-custom" placeholder="e.g. T6_2H_FIRESTAFF" />
+      </div>
+ 
+      <div class="field">
+        <label for="quality-select">Quality</label>
+        <select id="quality-select">
+          <option value="1">Normal</option>
+          <option value="2">Good</option>
+          <option value="3">Outstanding</option>
+          <option value="4">Excellent</option>
+          <option value="5">Masterpiece</option>
+        </select>
+      </div>
+ 
+      <button id="check-btn" type="button">Check Prices</button>
+    </section>
+ 
+    <p class="hint">no API key because its a public GET request</p>
+ 
+    <section id="status" aria-live="polite"></section>
+ 
+    <section id="result" hidden>
+      <div class="result-heading">
+        <img id="item-icon" alt="" />
+        <div>
+          <h2 id="item-name"></h2>
+          <p id="item-meta"></p>
+        </div>
+      </div>
+ 
+      <div id="ledger-table"></div>
+    </section>
+ 
+  </main>
+ 
+  <footer>
+    <p>
+      Built following the
+      <a href="https://www.albion-online-data.com/api/">
+        Albion Online Data Project API documentation
+      </a>.
+    </p>
+  </footer>
+ 
+</body>
+</html>
